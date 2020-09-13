@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Homework2_5"
         mc:Ignorable="d"
         Title="Add/Edit Employee" Height="300" Width="400">
-    <Grid>
+    <Grid x:Name="EmpGrid">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -20,11 +20,11 @@
         </Grid.ColumnDefinitions>
         
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1"/>
-        <TextBox x:Name="TBFirstName" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Grid.Row="0" Grid.Column="1"/>
+        <TextBox x:Name="TBFirstName" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="{Binding FirstName}" VerticalAlignment="Center" Width="120" Grid.Row="0" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1"/>
-        <TextBox x:Name="TBLastName" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Grid.Row="1" Grid.Column="1"/>
+        <TextBox x:Name="TBLastName" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="{Binding LastName}" VerticalAlignment="Center" Width="120" Grid.Row="1" Grid.Column="1"/>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Department" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1"/>
-        <ComboBox x:Name="DepChoose" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Grid.Row="2" Grid.Column="1"/>
+        <ComboBox x:Name="DepChoose" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Grid.Row="2" Grid.Column="1" SelectedIndex="{Binding DepartmentId}"/>
         <Button x:Name="Confirm" Content="Confirm" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="Confirm_Click" Grid.Row="3" Grid.Column="0"/>
         <Button x:Name="CloseForm" Content="Close" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Click="CloseForm_Click" Grid.Row="3" Grid.Column="2"/>
         <TextBlock x:Name="Status" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Grid.Row="3" Grid.Column="1"/>

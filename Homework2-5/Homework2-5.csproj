@@ -86,7 +86,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\EmployeeDepartment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

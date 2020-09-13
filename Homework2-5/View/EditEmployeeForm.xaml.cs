@@ -26,6 +26,13 @@ namespace Homework2_5
             InitializeComponent();
             DepChoose.ItemsSource = Program.departments.Select(d => d.DepartmentName);
         }
+        public EditEmployeeForm(Employee emp)
+        {
+            InitializeComponent();
+            DepChoose.ItemsSource = Program.departments.Select(d => d.DepartmentName);
+            EmpGrid.DataContext = emp;
+        }
+
 
         private void CloseForm_Click(object sender, RoutedEventArgs e)
         {

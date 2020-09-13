@@ -3,6 +3,7 @@ using Homework2_5.Models;
 using Homework2_5.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,26 +28,21 @@ namespace Homework2_5
         {
             InitializeComponent();
             Program.Init();
-    }
+            EmployeeList.ItemsSource = Program.employees;
+            DepartmentList.ItemsSource = Program.departments;
+        }
 
         private void EmployeeList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             
-            EditEmployeeForm f = new EditEmployeeForm();
-            f.Show();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Program.Execute();
-            EmployeeList.ItemsSource = Program.employeesDisplay;
-            DepartmentList.ItemsSource = Program.departments;
+            EditEmployeeForm f = new EditEmployeeForm(EmployeeList.SelectedItem as Employee);
+            f.ShowDialog();
         }
 
         private void DepartmentList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            EditDepartmentForm f = new EditDepartmentForm();
-            f.Show();
+            EditDepartmentForm f = new EditDepartmentForm(DepartmentList.SelectedItem as Department);
+            f.ShowDialog();
         }
     }
 }

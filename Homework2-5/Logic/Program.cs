@@ -1,6 +1,7 @@
 ﻿using Homework2_5.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Security.RightsManagement;
 using System.Text;
@@ -11,9 +12,8 @@ namespace Homework2_5.Logic
     static class Program
     {
         static Random r = new Random();
-        static public List<Department> departments = new List<Department>();
-        static public List<Employee> employees = new List<Employee>();
-        static public List<EmployeeDepartment> employeesDisplay = new List<EmployeeDepartment>();
+        static public ObservableCollection<Department> departments = new ObservableCollection<Department>();
+        static public ObservableCollection<Employee> employees = new ObservableCollection<Employee>();
         public static void Init()
         {
             for (int i = 0; i < 5; i++)
@@ -25,23 +25,6 @@ namespace Homework2_5.Logic
             {
                 employees.Add(new Employee(i, Guid.NewGuid().ToString(), Guid.NewGuid().ToString(), r.Next(0, 5)));
             }
-        }
-        /// <summary>
-        /// Выборка для более удобного отображения
-        /// </summary>
-        public static void Execute()
-        {
-            var employeequery = from e in employees
-                                join d in departments
-                                on e.DepartmentId equals d.Id
-                                select new EmployeeDepartment
-                                {
-                                    EmployeeId = e.Id,
-                                    FirstName = e.FirstName,
-                                    LastName = e.LastName,
-                                    Department = d.DepartmentName
-                                };
-            employeesDisplay = employeequery.ToList();
         }
         public static bool EmployeeAdd(string fname, string lname, int departmentid)
         {

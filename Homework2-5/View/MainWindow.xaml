@@ -6,26 +6,24 @@
         xmlns:local="clr-namespace:Homework2_5"
         mc:Ignorable="d"
         Title="Employee Database" Height="720" Width="1280">
-    <Grid>
-        <ListView x:Name="EmployeeList" HorizontalAlignment="Left" Height="250" Margin="20,20,0,0" VerticalAlignment="Top" Width="auto" MouseDoubleClick="EmployeeList_MouseDoubleClick">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=EmployeeId}" Header="Employee ID"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=FirstName}" Header="First Name"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=LastName}" Header="Last Name"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Department}" Header="Department"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <ListView  x:Name="DepartmentList" HorizontalAlignment="Left" Height="200" Margin="20,320,0,0" VerticalAlignment="Top" Width="270" MouseDoubleClick="DepartmentList_MouseDoubleClick">
-            <ListView.View>
-                <GridView>
+    <Grid x:Name="mainGrid">
+    <ListView x:Name="EmployeeList" HorizontalAlignment="Left" Height="250" Margin="20,20,0,0" VerticalAlignment="Top" Width="auto" MouseDoubleClick="EmployeeList_MouseDoubleClick">
+        <ListView.View>
+            <GridView>
+                <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Header="Employee ID"/>
+                <GridViewColumn DisplayMemberBinding="{Binding Path=FirstName}" Header="First Name"/>
+                <GridViewColumn DisplayMemberBinding="{Binding Path=LastName}" Header="Last Name"/>
+                <GridViewColumn DisplayMemberBinding="{Binding Path=DepartmentId}" Header="Department"/>
+            </GridView>
+        </ListView.View>
+    </ListView>
+    <ListView  x:Name="DepartmentList" HorizontalAlignment="Left" Height="200" Margin="20,320,0,0" VerticalAlignment="Top" Width="270" MouseDoubleClick="DepartmentList_MouseDoubleClick">
+        <ListView.View>
+            <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Header="ID"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=DepartmentName}" Header="Department"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button Content="Refresh" HorizontalAlignment="Left" Margin="600,600,0,0" VerticalAlignment="Top" Width="150" Height="50" FontSize="36" Click="Button_Click" RenderTransformOrigin="-5.29,21.416"/>
-
+            </GridView>
+        </ListView.View>
+    </ListView>
     </Grid>
 </Window>

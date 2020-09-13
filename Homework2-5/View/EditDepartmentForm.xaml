@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Homework2_5.View"
         mc:Ignorable="d"
         Title="Add/Edit Department" Height="200" Width="200">
-    <Grid>
+    <Grid x:Name="DepGrid">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -18,7 +18,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Department" VerticalAlignment="Top" RenderTransformOrigin="0.16,0.336" Grid.Row="0" Grid.Column="1"/>
-        <TextBox x:Name="TBDepartment" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="TBDepartment" HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="{Binding DepartmentName}" VerticalAlignment="Center" Width="120" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"/>
         <Button x:Name="Confirm" Content="Confirm" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Confirm_Click" Grid.Row="2" Grid.Column="0"/>
         <Button x:Name="CloseForm" Content="Close" HorizontalAlignment="Center" VerticalAlignment="Center" Click="CloseForm_Click" Grid.Row="2" Grid.Column="2"/>
         <TextBlock x:Name="Status" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1"/>

@@ -1,4 +1,5 @@
 ﻿using Homework2_5.Logic;
+using Homework2_5.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,11 @@ namespace Homework2_5.View
         public EditDepartmentForm()
         {
             InitializeComponent();
+        }
+        public EditDepartmentForm(Department dep)
+        {
+            InitializeComponent();
+            DepGrid.DataContext = dep;
         }
 
         private void Confirm_Click(object sender, RoutedEventArgs e)
